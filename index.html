@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="jquery.resizable-columns.js"></script>
+
+    <style>
+        #containerElement {
+            border: 1px solid #2bade9;
+            margin: 0;
+            padding: 0;
+            height: 400px;
+            box-sizing: border-box;
+        }
+        
+        #element2 {
+            width: 350px;
+            height: 100%;
+            float: right;
+            position: relative;
+        }
+        
+        #element1 {
+            height: 100%;
+            float: right;
+        }
+        
+        #draggableElement {
+            width: 10px;
+            height: 100%;
+            background: #d9f5ff;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="containerElement">
+        <div id="element2">
+            Element 2
+        </div>
+        <div id="draggableElement"></div>
+        <div id="element1">
+            Element 1
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#containerElement").resizableColumns({
+            draggableElement: "#draggableElement",
+            columnRightElement: "#element2",
+            containerElement: "#containerElement",
+            maxWidthColumnRight: 400,
+            minWidthColumnRight: 100
+        });
+    });
+</script>
+
+</html>
